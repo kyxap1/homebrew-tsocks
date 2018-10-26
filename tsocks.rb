@@ -3,8 +3,8 @@ require 'formula'
 class Tsocks < Formula
   # The original is http://tsocks.sourceforge.net/
   # This GitHub repo is a maintained fork with OSX support
-  homepage 'http://github.com/pc/tsocks'
-  head 'https://github.com/pc/tsocks.git'
+  homepage 'http://github.com/kyxap1/tsocks'
+  head 'https://github.com/kyxap1/tsocks.git'
  
   depends_on 'autoconf' => :build if MacOS::Xcode.version.to_f >= 4.3
  
@@ -17,7 +17,7 @@ class Tsocks < Formula
     system "make"
     system "make install"
  
-    etc.install "tsocks.conf.simple.example" => "tsocks.conf" unless config_file.exist?
+    etc.install "tsocks.conf.minimal.example" => "tsocks.conf" unless config_file.exist?
   end
  
   def test
